@@ -44,7 +44,7 @@ export const pembayaranRouter = router({
 
       if (ctx.user.role === "ADMINISTRATOR") {
         let adminPetugas = await ctx.prisma.petugas.findFirst({
-          where: { username: ctx.user.nama },
+          where: { username: "admin" },
         });
 
         if (!adminPetugas) {
